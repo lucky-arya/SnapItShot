@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg: #0D0D0C;
+    --color-surface: #141412;
+    --color-card: #1A1917;
+    --color-text: #F4F0E8;
+    --color-text-muted: #9E988E;
+    --color-border: rgba(255, 255, 255, 0.08);
+    --color-accent: #C9A888;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #0D0D0C;
+    color: #F4F0E8;
+  }
+
+  /* Custom dark scrollbar for sleek editorial luxury feel */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0D0D0C;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Glassmorphism Styles */
+.glass-nav {
+  background: rgba(13, 13, 12, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.glass-card {
+  background: rgba(26, 25, 23, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.glass-card:hover {
+  background: rgba(35, 34, 31, 0.6);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-pill:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Editorial Typography utilities */
+.font-serif-display {
+  font-family: 'Instrument Serif', 'Playfair Display', Georgia, serif;
+}
+
+.font-editorial-sans {
+  font-family: 'Inter', 'Manrope', system-ui, sans-serif;
+}
+
+.font-signature {
+  font-family: 'Caveat', cursive;
+}
+
+/* Subtle image zoom transition */
+.image-zoom-editorial {
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), filter 0.8s ease;
+}
+
+.group:hover .image-zoom-editorial {
+  transform: scale(1.025);
+}
+
+/* Underline link animation */
+.editorial-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.editorial-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.editorial-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}

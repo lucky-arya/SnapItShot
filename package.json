@@ -1,0 +1,17 @@
+{
+  "name": "snapitshot-photography",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SnapItShot — Abhishek Arya Editorial Luxury Photography Website (MERN)",
+  "scripts": {
+    "client": "npm run dev --prefix client",
+    "client:build": "npm run build --prefix client",
+    "server": "npm run dev --prefix server",
+    "server:start": "npm start --prefix server",
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"blue,magenta\" \"npm run server\" \"npm run client\"",
+    "install:all": "npm install && npm install --prefix client && npm install --prefix server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
