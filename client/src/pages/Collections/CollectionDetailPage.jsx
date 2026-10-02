@@ -45,7 +45,7 @@ export default function CollectionDetailPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0D0D0C] text-cream-light flex flex-col font-sans">
+    <div className="min-h-screen bg-cream dark:bg-[#0D0D0C] text-charcoal dark:text-cream-light flex flex-col font-sans transition-colors duration-400">
       <Navbar forceScrolled={true} />
 
       <main className="flex-1 pt-32 pb-24 sm:pb-32">
@@ -55,7 +55,7 @@ export default function CollectionDetailPage() {
           <div className="mb-8">
             <Link
               to="/#collections"
-              className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-muted hover:text-cream transition-colors group"
+              className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-muted hover:text-charcoal dark:hover:text-cream transition-colors group"
             >
               <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform" />
               <span>ALL COLLECTIONS</span>
@@ -66,17 +66,17 @@ export default function CollectionDetailPage() {
           <div className="max-w-3xl space-y-6 mb-16 sm:mb-20">
             <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-muted">
               <span>{collection.number}</span>
-              <span className="text-white/20">/</span>
+              <span className="text-lumiere-border dark:text-white/20">/</span>
               <span>05</span>
             </div>
 
-            <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl tracking-tight leading-none text-cream-light">
+            <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl tracking-tight leading-none text-charcoal dark:text-cream-light">
               {collection.title}
             </h1>
             <p className="font-mono text-xs uppercase tracking-widest text-muted">
               {collection.descriptor}
             </p>
-            <div className="w-16 h-[1px] bg-white/20" />
+            <div className="w-16 h-[1px] bg-charcoal/40 dark:bg-white/20" />
             
             <p className="text-muted text-base sm:text-lg leading-relaxed max-w-xl">
               {collection.description}
@@ -86,14 +86,14 @@ export default function CollectionDetailPage() {
           {/* Curated Photographic Sequence */}
           <div className="grid grid-cols-12 gap-8 sm:gap-12 mb-28">
             {collectionImages.map((img, idx) => (
-              <div key={idx} className={`relative overflow-hidden bg-[#141412] border border-white/5 ${img.aspect} group`}>
+              <div key={idx} className={`relative overflow-hidden bg-cream-dark dark:bg-[#141412] border border-black/5 dark:border-white/5 ${img.aspect} group`}>
                 <img
                   src={img.src}
                   alt={img.caption}
-                  className="w-full h-full object-cover image-zoom-editorial filter brightness-[0.88] group-hover:brightness-100 transition-all duration-700"
+                  className="w-full h-full object-cover image-zoom-editorial filter brightness-[0.93] dark:brightness-[0.88] group-hover:brightness-100 transition-all duration-700"
                   loading="lazy"
                 />
-                <div className="absolute bottom-0 inset-x-0 p-4 sm:p-6 bg-gradient-to-t from-[#0D0D0C]/90 to-transparent flex items-end justify-between text-cream-light opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 inset-x-0 p-4 sm:p-6 bg-gradient-to-t from-charcoal/85 to-transparent flex items-end justify-between text-cream-light opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <span className="text-xs font-mono tracking-wider">{img.caption}</span>
                   <span className="text-[10px] font-mono opacity-70 tracking-widest uppercase">{img.location}</span>
                 </div>
@@ -101,21 +101,21 @@ export default function CollectionDetailPage() {
             ))}
           </div>
 
-          {/* Next Collection Banner with Dark Frosted Styling */}
-          <div className="border-t border-white/10 pt-16">
+          {/* Next Collection Banner */}
+          <div className="border-t border-lumiere-border/50 dark:border-white/10 pt-16">
             <span className="font-mono text-xs uppercase tracking-widest text-muted block mb-4">
               Next Chapter
             </span>
             <Link
               to={`/collections/${nextCollection.slug}`}
-              className="group block relative overflow-hidden rounded-sm h-[200px] sm:h-[260px] bg-[#161513] border border-white/10 text-cream-light shadow-xl"
+              className="group block relative overflow-hidden rounded-sm h-[200px] sm:h-[260px] bg-[#161513] border border-black/10 dark:border-white/10 text-cream-light shadow-xl"
             >
               <img
                 src={nextCollection.image}
                 alt={nextCollection.title}
                 className="w-full h-full object-cover image-zoom-editorial filter brightness-[0.6] group-hover:brightness-[0.75] transition-all duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#0D0D0C]/90 via-[#0D0D0C]/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-charcoal/90 via-charcoal/40 to-transparent" />
               <div className="absolute inset-0 p-8 sm:p-12 flex items-center justify-between">
                 <div>
                   <span className="font-mono text-xs text-cream-light/70 tracking-widest block mb-2">

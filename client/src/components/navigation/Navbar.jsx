@@ -33,22 +33,22 @@ export default function Navbar({ forceScrolled = false }) {
   return (
     <>
       {isScrolled ? (
-        /* ================= SCROLLED STATE: FLOATING CAPSULE (FULL GLASSMORPHISM) ================= */
+        /* ================= SCROLLED STATE: FLOATING CAPSULE (HIGH VISIBILITY GLASSMORPHISM) ================= */
         <header className="fixed top-3 sm:top-5 inset-x-0 z-40 flex justify-center px-4 pointer-events-none transition-all duration-500 animate-fadeIn">
           <div className="pointer-events-auto glass-capsule rounded-full py-2.5 sm:py-3 px-4 sm:px-7 flex items-center justify-between w-full max-w-[95%] sm:max-w-2xl md:max-w-3xl lg:max-w-4xl">
             
-            {/* Left: Brand Name */}
+            {/* Left: Brand Name - Crisp High Contrast */}
             <div className="flex items-center gap-2">
               <Link
                 to="/"
-                className="font-serif text-lg sm:text-xl tracking-[0.18em] font-normal hover:opacity-80 transition-opacity truncate"
+                className="font-serif text-lg sm:text-xl tracking-[0.18em] font-normal text-charcoal dark:text-cream-light hover:opacity-80 transition-opacity truncate"
               >
                 {siteSettings.brandName.toUpperCase()}
               </Link>
             </div>
 
             {/* Center: Navigation Links (Desktop) */}
-            <nav className="hidden md:flex items-center space-x-8 text-xs font-mono uppercase tracking-widest text-muted">
+            <nav className="hidden md:flex items-center space-x-8 text-xs font-mono uppercase tracking-widest text-charcoal/80 dark:text-cream-light/80">
               <Link to="/work" className="editorial-underline hover:text-charcoal dark:hover:text-cream transition-colors">
                 WORK
               </Link>
@@ -68,7 +68,7 @@ export default function Navbar({ forceScrolled = false }) {
               {/* Inquire Action Button */}
               <Link
                 to="/inquire"
-                className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 rounded-full glass-pill text-xs font-mono uppercase tracking-widest text-charcoal dark:text-cream-light hover:bg-charcoal hover:text-cream dark:hover:bg-cream dark:hover:text-charcoal transition-all duration-300 group"
+                className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 rounded-full glass-pill text-xs font-mono uppercase tracking-widest text-charcoal dark:text-cream-light hover:bg-charcoal hover:text-cream dark:hover:bg-cream dark:hover:text-charcoal transition-all duration-300 group font-medium"
                 aria-label="Inquire"
               >
                 <span className="hidden sm:inline">INQUIRE</span>
@@ -78,7 +78,7 @@ export default function Navbar({ forceScrolled = false }) {
               {/* Mobile Hamburger Button */}
               <button
                 onClick={() => setMobileMenuOpen(true)}
-                className="md:hidden p-1.5 rounded-full glass-pill hover:opacity-80 transition-opacity flex items-center justify-center min-w-[34px] min-h-[34px]"
+                className="md:hidden p-1.5 rounded-full glass-pill text-charcoal dark:text-cream-light hover:opacity-80 transition-opacity flex items-center justify-center min-w-[34px] min-h-[34px]"
                 aria-label="Open menu"
               >
                 <Menu className="w-4 h-4 stroke-[1.5]" />

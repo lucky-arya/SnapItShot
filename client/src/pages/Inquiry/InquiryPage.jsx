@@ -56,7 +56,7 @@ export default function InquiryPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0D0D0C] text-cream-light flex flex-col font-sans">
+    <div className="min-h-screen bg-cream dark:bg-[#0D0D0C] text-charcoal dark:text-cream-light flex flex-col font-sans transition-colors duration-400">
       <Navbar forceScrolled={true} />
 
       <main className="flex-1 pt-32 pb-24 sm:pb-32">
@@ -67,10 +67,10 @@ export default function InquiryPage() {
             <span className="font-mono text-xs uppercase tracking-widest text-muted block">
               06 / Inquire
             </span>
-            <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl tracking-tight leading-none text-cream-light">
+            <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl tracking-tight leading-none text-charcoal dark:text-cream-light">
               LET'S CREATE<br />SOMETHING TOGETHER.
             </h1>
-            <div className="w-16 h-[1px] bg-white/20 pt-1" />
+            <div className="w-16 h-[1px] bg-charcoal/40 dark:bg-white/20 pt-1" />
             <p className="text-muted text-base sm:text-lg leading-relaxed max-w-xl">
               Every photograph begins with an honest conversation. Share your ideas, dates, or stories below and I'll respond within 24–48 hours.
             </p>
@@ -82,10 +82,10 @@ export default function InquiryPage() {
             <div className="lg:col-span-7">
               {isSubmitted ? (
                 <div className="glass-card p-10 sm:p-14 text-center rounded-sm space-y-6 animate-fadeIn">
-                  <div className="w-14 h-14 rounded-full bg-cream text-charcoal mx-auto flex items-center justify-center">
+                  <div className="w-14 h-14 rounded-full bg-charcoal text-cream dark:bg-cream dark:text-charcoal mx-auto flex items-center justify-center">
                     <CheckCircle2 className="w-7 h-7" />
                   </div>
-                  <h3 className="font-serif text-3xl sm:text-4xl text-cream-light">
+                  <h3 className="font-serif text-3xl sm:text-4xl text-charcoal dark:text-cream-light">
                     THANK YOU. I'VE GOT YOUR MESSAGE.
                   </h3>
                   <p className="text-muted text-base max-w-md mx-auto leading-relaxed">
@@ -94,7 +94,7 @@ export default function InquiryPage() {
                   <div className="pt-4">
                     <Link
                       to="/work"
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-cream text-charcoal text-xs font-mono uppercase tracking-widest hover:bg-white transition-all font-medium"
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-charcoal text-cream dark:bg-cream dark:text-charcoal text-xs font-mono uppercase tracking-widest hover:opacity-90 transition-all font-medium"
                     >
                       <span>VIEW WORK</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -117,7 +117,7 @@ export default function InquiryPage() {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="e.g. Maya Patel"
-                      className="w-full bg-transparent border-b border-white/20 py-3 text-base text-cream placeholder:text-muted/40 focus:border-cream focus:outline-none transition-colors"
+                      className="w-full bg-transparent border-b border-charcoal/20 dark:border-white/20 py-3 text-base text-charcoal dark:text-cream placeholder:text-muted/40 focus:border-charcoal dark:focus:border-cream focus:outline-none transition-colors"
                     />
                   </div>
 
@@ -135,7 +135,7 @@ export default function InquiryPage() {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="e.g. maya@example.com"
-                        className="w-full bg-transparent border-b border-white/20 py-3 text-base text-cream placeholder:text-muted/40 focus:border-cream focus:outline-none transition-colors"
+                        className="w-full bg-transparent border-b border-charcoal/20 dark:border-white/20 py-3 text-base text-charcoal dark:text-cream placeholder:text-muted/40 focus:border-charcoal dark:focus:border-cream focus:outline-none transition-colors"
                       />
                     </div>
 
@@ -150,7 +150,7 @@ export default function InquiryPage() {
                         value={formData.phone}
                         onChange={handleChange}
                         placeholder="+91 98765 43210"
-                        className="w-full bg-transparent border-b border-white/20 py-3 text-base text-cream placeholder:text-muted/40 focus:border-cream focus:outline-none transition-colors"
+                        className="w-full bg-transparent border-b border-charcoal/20 dark:border-white/20 py-3 text-base text-charcoal dark:text-cream placeholder:text-muted/40 focus:border-charcoal dark:focus:border-cream focus:outline-none transition-colors"
                       />
                     </div>
                   </div>
@@ -168,8 +168,8 @@ export default function InquiryPage() {
                           onClick={() => setFormData(prev => ({ ...prev, projectType: type }))}
                           className={`px-4 py-2 rounded-full text-xs font-mono tracking-wider transition-all duration-300 ${
                             formData.projectType === type
-                              ? 'bg-cream text-charcoal font-medium shadow-md'
-                              : 'glass-pill text-cream-light/75 hover:text-cream'
+                              ? 'bg-charcoal text-cream dark:bg-cream dark:text-charcoal font-medium shadow-md'
+                              : 'glass-pill text-charcoal/80 dark:text-cream-light/75 hover:text-charcoal dark:hover:text-cream'
                           }`}
                         >
                           {type}
@@ -191,7 +191,7 @@ export default function InquiryPage() {
                         value={formData.date}
                         onChange={handleChange}
                         placeholder="e.g. October 2026"
-                        className="w-full bg-transparent border-b border-white/20 py-3 text-base text-cream placeholder:text-muted/40 focus:border-cream focus:outline-none transition-colors"
+                        className="w-full bg-transparent border-b border-charcoal/20 dark:border-white/20 py-3 text-base text-charcoal dark:text-cream placeholder:text-muted/40 focus:border-charcoal dark:focus:border-cream focus:outline-none transition-colors"
                       />
                     </div>
 
@@ -206,7 +206,7 @@ export default function InquiryPage() {
                         value={formData.location}
                         onChange={handleChange}
                         placeholder="e.g. Udaipur, India"
-                        className="w-full bg-transparent border-b border-white/20 py-3 text-base text-cream placeholder:text-muted/40 focus:border-cream focus:outline-none transition-colors"
+                        className="w-full bg-transparent border-b border-charcoal/20 dark:border-white/20 py-3 text-base text-charcoal dark:text-cream placeholder:text-muted/40 focus:border-charcoal dark:focus:border-cream focus:outline-none transition-colors"
                       />
                     </div>
                   </div>
@@ -224,7 +224,7 @@ export default function InquiryPage() {
                       value={formData.message}
                       onChange={handleChange}
                       placeholder="Share a few details about what you have in mind..."
-                      className="w-full bg-transparent border-b border-white/20 py-3 text-base text-cream placeholder:text-muted/40 focus:border-cream focus:outline-none transition-colors resize-none"
+                      className="w-full bg-transparent border-b border-charcoal/20 dark:border-white/20 py-3 text-base text-charcoal dark:text-cream placeholder:text-muted/40 focus:border-charcoal dark:focus:border-cream focus:outline-none transition-colors resize-none"
                     />
                   </div>
 
@@ -233,7 +233,7 @@ export default function InquiryPage() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-cream text-charcoal hover:bg-white text-xs font-mono uppercase tracking-widest font-semibold transition-all duration-300 shadow-xl group disabled:opacity-50"
+                      className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-charcoal text-cream dark:bg-cream dark:text-charcoal hover:opacity-90 text-xs font-mono uppercase tracking-widest font-semibold transition-all duration-300 shadow-xl group disabled:opacity-50"
                     >
                       <span>{isSubmitting ? 'SENDING INQUIRY...' : 'SEND INQUIRY'}</span>
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -249,7 +249,7 @@ export default function InquiryPage() {
               
               {/* Direct Contact Cards with Glassmorphism */}
               <div className="glass-card p-8 rounded-sm space-y-6">
-                <h3 className="font-serif text-2xl text-cream-light">
+                <h3 className="font-serif text-2xl text-charcoal dark:text-cream-light">
                   DIRECT DETAILS
                 </h3>
 
@@ -257,8 +257,8 @@ export default function InquiryPage() {
                   <div className="flex items-start gap-3">
                     <Mail className="w-4 h-4 text-lumiere-accent shrink-0 mt-0.5" />
                     <div>
-                      <span className="block text-cream-light">Email</span>
-                      <a href={`mailto:${siteSettings.email}`} className="text-muted hover:text-cream transition-colors">
+                      <span className="block text-charcoal dark:text-cream-light">Email</span>
+                      <a href={`mailto:${siteSettings.email}`} className="text-muted hover:text-charcoal dark:hover:text-cream transition-colors">
                         {siteSettings.email}
                       </a>
                     </div>
@@ -267,7 +267,7 @@ export default function InquiryPage() {
                   <div className="flex items-start gap-3">
                     <MapPin className="w-4 h-4 text-lumiere-accent shrink-0 mt-0.5" />
                     <div>
-                      <span className="block text-cream-light">Studio Base</span>
+                      <span className="block text-charcoal dark:text-cream-light">Studio Base</span>
                       <span>{siteSettings.location}</span>
                     </div>
                   </div>
@@ -275,7 +275,7 @@ export default function InquiryPage() {
                   <div className="flex items-start gap-3">
                     <Phone className="w-4 h-4 text-lumiere-accent shrink-0 mt-0.5" />
                     <div>
-                      <span className="block text-cream-light">Direct Line</span>
+                      <span className="block text-charcoal dark:text-cream-light">Direct Line</span>
                       <span>{siteSettings.phone}</span>
                     </div>
                   </div>
@@ -288,16 +288,16 @@ export default function InquiryPage() {
 
               {/* FAQ Accordion */}
               <div className="space-y-4">
-                <h3 className="font-serif text-2xl text-cream-light">
+                <h3 className="font-serif text-2xl text-charcoal dark:text-cream-light">
                   FREQUENT QUESTIONS
                 </h3>
 
-                <div className="divide-y divide-white/10 border-y border-white/10">
+                <div className="divide-y divide-charcoal/10 dark:divide-white/10 border-y border-charcoal/10 dark:border-white/10">
                   {faqs.map((faq, idx) => (
                     <div key={idx} className="py-4">
                       <button
                         onClick={() => toggleFaq(idx)}
-                        className="w-full flex items-center justify-between text-left font-serif text-lg text-cream-light hover:text-lumiere-accent transition-colors"
+                        className="w-full flex items-center justify-between text-left font-serif text-lg text-charcoal dark:text-cream-light hover:text-lumiere-accent transition-colors"
                       >
                         <span>{faq.question}</span>
                         <ChevronDown className={`w-4 h-4 shrink-0 transition-transform duration-300 ${openFaq === idx ? 'rotate-180 text-lumiere-accent' : ''}`} />

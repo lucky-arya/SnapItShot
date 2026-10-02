@@ -10,7 +10,6 @@ export default function WorkPage() {
 
   const categories = ['ALL', 'PORTRAITS', 'WEDDINGS', 'TRAVEL', 'LANDSCAPES', 'LIFESTYLE'];
 
-  // Combine items and additional archive images for a complete gallery archive
   const archiveItems = [
     ...selectedWork,
     {
@@ -53,7 +52,7 @@ export default function WorkPage() {
     : archiveItems.filter(item => item.category === activeFilter);
 
   return (
-    <div className="min-h-screen bg-[#0D0D0C] text-cream-light flex flex-col font-sans">
+    <div className="min-h-screen bg-cream dark:bg-[#0D0D0C] text-charcoal dark:text-cream-light flex flex-col font-sans transition-colors duration-400">
       <Navbar forceScrolled={true} />
 
       <main className="flex-1 pt-32 pb-24 sm:pb-32">
@@ -64,25 +63,25 @@ export default function WorkPage() {
             <span className="font-mono text-xs uppercase tracking-widest text-muted block">
               Curated Archive
             </span>
-            <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl tracking-tight leading-none text-cream-light">
+            <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl tracking-tight leading-none text-charcoal dark:text-cream-light">
               SELECTED WORK
             </h1>
-            <div className="w-16 h-[1px] bg-white/20 pt-1" />
+            <div className="w-16 h-[1px] bg-charcoal/40 dark:bg-white/20 pt-1" />
             <p className="text-muted text-base sm:text-lg leading-relaxed max-w-xl">
               A comprehensive collection of moments, people, places and stories captured across continents.
             </p>
           </div>
 
-          {/* Category Filter Pills (Glassmorphic) */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-6 mb-12 border-b border-white/10 scrollbar-none">
+          {/* Category Filter Pills */}
+          <div className="flex items-center gap-2 overflow-x-auto pb-6 mb-12 border-b border-lumiere-border/40 dark:border-white/10 scrollbar-none">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveFilter(cat)}
                 className={`px-5 py-2 rounded-full text-xs font-mono tracking-wider transition-all duration-300 shrink-0 ${
                   activeFilter === cat
-                    ? 'bg-cream text-charcoal font-medium shadow-md'
-                    : 'glass-pill text-cream-light/75 hover:text-cream'
+                    ? 'bg-charcoal text-cream dark:bg-cream dark:text-charcoal font-medium shadow-md'
+                    : 'glass-pill text-charcoal/80 dark:text-cream-light/75 hover:text-charcoal dark:hover:text-cream'
                 }`}
               >
                 {cat}
@@ -96,16 +95,16 @@ export default function WorkPage() {
               <Link
                 key={item.id}
                 to={`/work/${item.id}`}
-                className={`group block relative overflow-hidden bg-[#141412] border border-white/5 shadow-xl ${item.gridSpan}`}
+                className={`group block relative overflow-hidden bg-cream-dark dark:bg-[#141412] border border-black/5 dark:border-white/5 shadow-xl ${item.gridSpan}`}
               >
                 <div className={`w-full overflow-hidden ${item.aspect}`}>
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover image-zoom-editorial filter brightness-[0.88] group-hover:brightness-100 transition-all duration-700"
+                    className="w-full h-full object-cover image-zoom-editorial filter brightness-[0.92] dark:brightness-[0.88] group-hover:brightness-100 transition-all duration-700"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0C]/90 via-transparent to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-transparent to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
                   
                   {/* Overlay Metadata */}
                   <div className="absolute bottom-0 inset-x-0 p-5 sm:p-6 flex items-end justify-between text-cream-light pointer-events-none">
@@ -121,7 +120,7 @@ export default function WorkPage() {
                       </p>
                     </div>
 
-                    <div className="w-8 h-8 rounded-full glass-pill flex items-center justify-center group-hover:bg-cream group-hover:text-charcoal transition-all duration-300">
+                    <div className="w-8 h-8 rounded-full glass-pill flex items-center justify-center text-cream-light group-hover:bg-cream group-hover:text-charcoal transition-all duration-300">
                       <ArrowRight className="w-3.5 h-3.5" />
                     </div>
                   </div>
@@ -135,7 +134,7 @@ export default function WorkPage() {
             <span className="font-mono text-xs uppercase tracking-widest text-muted block">
               Commissioned Assignments
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl text-cream-light">
+            <h2 className="font-serif text-3xl sm:text-4xl text-charcoal dark:text-cream-light">
               LOOKING FOR SOMETHING A LITTLE MORE PERSONAL?
             </h2>
             <p className="text-muted text-sm sm:text-base leading-relaxed">
@@ -144,7 +143,7 @@ export default function WorkPage() {
             <div className="pt-2">
               <Link
                 to="/inquire"
-                className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-cream text-charcoal hover:bg-white text-xs font-mono uppercase tracking-widest font-medium transition-all duration-300 group shadow-md"
+                className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-charcoal text-cream dark:bg-cream dark:text-charcoal hover:opacity-90 text-xs font-mono uppercase tracking-widest font-medium transition-all duration-300 group shadow-md"
               >
                 <span>START A CONVERSATION</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
