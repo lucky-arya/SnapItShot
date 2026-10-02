@@ -25,6 +25,10 @@ build/
 .env.test.local
 .env.production.local
 
+# UI design reference images & markdown specification files
+*.png
+*.md
+
 # Editor and OS
 .DS_Store
 Thumbs.db
