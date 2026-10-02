@@ -11,8 +11,8 @@ import ContactCTASection from '../../components/home/ContactCTASection';
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-[#0D0D0C] text-cream-light flex flex-col font-sans selection:bg-[#C9A888] selection:text-[#0D0D0C]">
-      {/* Global Navigation with dynamic transparent-to-glassmorphism scroll states */}
+    <div className="min-h-screen bg-cream dark:bg-[#0D0D0C] text-charcoal dark:text-cream-light flex flex-col font-sans transition-colors duration-400">
+      {/* Global Navigation with dynamic transparent-to-capsule glassmorphism scroll states */}
       <Navbar />
 
       {/* Main Narrative Homepage Sequence */}

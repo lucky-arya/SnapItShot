@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -26,13 +27,13 @@ export default {
           dark: '#0D0D0C',
         },
         muted: {
-          DEFAULT: '#9E988E',
-          light: '#BDB7AC',
-          dark: '#686358',
+          DEFAULT: '#706B62',
+          light: '#9E988E',
+          dark: '#524E47',
         },
         lumiere: {
-          border: 'rgba(255, 255, 255, 0.1)',
-          'border-light': 'rgba(255, 255, 255, 0.06)',
+          border: '#B8AC9B',
+          'border-light': '#E6DED1',
           accent: '#C9A888',
           'accent-dark': '#A78465',
         }

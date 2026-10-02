@@ -9,7 +9,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#0A0A09] border-t border-white/10 pt-20 pb-12 text-cream-light">
+    <footer className="bg-cream-light dark:bg-[#0A0A09] border-t border-lumiere-border/50 dark:border-white/10 pt-20 pb-12 text-charcoal dark:text-cream-light transition-colors duration-400">
       <div className="max-w-site mx-auto px-6 sm:px-10 lg:px-16">
         
         {/* Main Footer Grid */}
@@ -17,7 +17,7 @@ export default function Footer() {
           
           {/* Brand & Editorial Manifesto Statement */}
           <div className="md:col-span-5 space-y-4">
-            <Link to="/" className="font-serif text-3xl tracking-[0.2em] font-normal block text-cream-light">
+            <Link to="/" className="font-serif text-3xl tracking-[0.2em] font-normal block text-charcoal dark:text-cream-light">
               {siteSettings.brandName.toUpperCase()}
             </Link>
             <p className="text-muted text-sm max-w-sm leading-relaxed">
@@ -33,22 +33,22 @@ export default function Footer() {
             <h4 className="text-xs uppercase tracking-widest font-mono text-muted/80">Explore</h4>
             <ul className="space-y-3 text-sm">
               <li>
-                <Link to="/work" className="editorial-underline text-cream-light/80 hover:text-cream transition-colors">
+                <Link to="/work" className="editorial-underline text-charcoal/80 dark:text-cream-light/80 hover:text-charcoal dark:hover:text-cream transition-colors">
                   Selected Work
                 </Link>
               </li>
               <li>
-                <a href="/#collections" className="editorial-underline text-cream-light/80 hover:text-cream transition-colors">
+                <a href="/#collections" className="editorial-underline text-charcoal/80 dark:text-cream-light/80 hover:text-charcoal dark:hover:text-cream transition-colors">
                   Collections
                 </a>
               </li>
               <li>
-                <Link to="/about" className="editorial-underline text-cream-light/80 hover:text-cream transition-colors">
+                <Link to="/about" className="editorial-underline text-charcoal/80 dark:text-cream-light/80 hover:text-charcoal dark:hover:text-cream transition-colors">
                   About Abhishek
                 </Link>
               </li>
               <li>
-                <Link to="/inquire" className="editorial-underline text-cream-light/80 hover:text-cream transition-colors">
+                <Link to="/inquire" className="editorial-underline text-charcoal/80 dark:text-cream-light/80 hover:text-charcoal dark:hover:text-cream transition-colors">
                   Inquire & Contact
                 </Link>
               </li>
@@ -64,7 +64,7 @@ export default function Footer() {
                   href={`https://instagram.com/${siteSettings.instagram}`} 
                   target="_blank" 
                   rel="noreferrer"
-                  className="editorial-underline text-cream-light/80 hover:text-cream transition-colors"
+                  className="editorial-underline text-charcoal/80 dark:text-cream-light/80 hover:text-charcoal dark:hover:text-cream transition-colors"
                 >
                   Instagram — @{siteSettings.instagram}
                 </a>
@@ -74,7 +74,7 @@ export default function Footer() {
                   href={`https://pinterest.com/${siteSettings.pinterest}`} 
                   target="_blank" 
                   rel="noreferrer"
-                  className="editorial-underline text-cream-light/80 hover:text-cream transition-colors"
+                  className="editorial-underline text-charcoal/80 dark:text-cream-light/80 hover:text-charcoal dark:hover:text-cream transition-colors"
                 >
                   Pinterest
                 </a>
@@ -82,7 +82,7 @@ export default function Footer() {
               <li>
                 <a 
                   href={`mailto:${siteSettings.email}`}
-                  className="editorial-underline text-cream-light/80 hover:text-cream transition-colors"
+                  className="editorial-underline text-charcoal/80 dark:text-cream-light/80 hover:text-charcoal dark:hover:text-cream transition-colors"
                 >
                   {siteSettings.email}
                 </a>
@@ -93,14 +93,14 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar with Copyright & Back to Top */}
-        <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted tracking-wider">
+        <div className="pt-8 border-t border-lumiere-border/30 dark:border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted tracking-wider">
           <p>© {new Date().getFullYear()} {siteSettings.brandName.toUpperCase()} PHOTOGRAPHY. ALL RIGHTS RESERVED.</p>
           <div className="flex items-center gap-8">
-            <span className="hover:text-cream cursor-pointer transition-colors">PRIVACY</span>
-            <span className="hover:text-cream cursor-pointer transition-colors">TERMS</span>
+            <span className="hover:text-charcoal dark:hover:text-cream cursor-pointer transition-colors">PRIVACY</span>
+            <span className="hover:text-charcoal dark:hover:text-cream cursor-pointer transition-colors">TERMS</span>
             <button
               onClick={scrollToTop}
-              className="inline-flex items-center gap-2 hover:text-cream transition-colors uppercase tracking-widest text-xs ml-4 group glass-pill px-4 py-2 rounded-full"
+              className="inline-flex items-center gap-2 hover:text-charcoal dark:hover:text-cream transition-colors uppercase tracking-widest text-xs ml-4 group glass-pill px-4 py-2 rounded-full"
               aria-label="Back to top"
             >
               <span>BACK TO TOP</span>

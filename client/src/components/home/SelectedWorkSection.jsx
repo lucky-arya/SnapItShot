@@ -13,7 +13,7 @@ export default function SelectedWorkSection() {
     : selectedWork.filter(item => item.category === activeCategory);
 
   return (
-    <section className="bg-[#0D0D0C] text-cream-light py-24 sm:py-32 lg:py-40 border-b border-white/10">
+    <section className="bg-cream dark:bg-[#0D0D0C] text-charcoal dark:text-cream-light py-24 sm:py-32 lg:py-40 border-b border-lumiere-border/40 dark:border-white/10 transition-colors duration-400">
       <div className="max-w-site mx-auto px-6 sm:px-10 lg:px-16">
         
         {/* Section Header Grid: Info Left on Desktop */}
@@ -22,15 +22,15 @@ export default function SelectedWorkSection() {
           <div className="lg:col-span-4 space-y-6">
             <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-muted">
               <span>02</span>
-              <span className="text-white/20">/</span>
+              <span className="text-lumiere-border dark:text-white/20">/</span>
               <span>06</span>
             </div>
 
             <div className="space-y-3">
-              <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-none text-cream-light">
+              <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-none text-charcoal dark:text-cream-light">
                 SELECTED<br />WORK
               </h2>
-              <div className="w-12 h-[1px] bg-white/20 pt-1" />
+              <div className="w-12 h-[1px] bg-charcoal/40 dark:bg-white/20 pt-1" />
             </div>
 
             <p className="text-muted text-sm sm:text-base leading-relaxed max-w-sm">
@@ -40,7 +40,7 @@ export default function SelectedWorkSection() {
             <div>
               <Link
                 to="/work"
-                className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-cream-light hover:text-lumiere-accent transition-colors editorial-underline group"
+                className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-charcoal dark:text-cream-light hover:text-lumiere-accent transition-colors editorial-underline group"
               >
                 <span>VIEW ALL WORK</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -55,8 +55,8 @@ export default function SelectedWorkSection() {
                   onClick={() => setActiveCategory(cat)}
                   className={`w-fit px-5 py-2 rounded-full text-xs font-mono tracking-wider transition-all duration-300 text-left ${
                     activeCategory === cat
-                      ? 'bg-cream text-charcoal font-medium shadow-md'
-                      : 'glass-pill text-cream-light/75 hover:text-cream'
+                      ? 'bg-charcoal text-cream dark:bg-cream dark:text-charcoal font-medium shadow-md'
+                      : 'glass-pill text-charcoal/80 dark:text-cream-light/75 hover:text-charcoal dark:hover:text-cream'
                   }`}
                 >
                   {cat}
@@ -73,8 +73,8 @@ export default function SelectedWorkSection() {
                 onClick={() => setActiveCategory(cat)}
                 className={`shrink-0 px-4 py-2 rounded-full text-xs font-mono tracking-wider transition-all duration-300 ${
                   activeCategory === cat
-                    ? 'bg-cream text-charcoal font-medium shadow-md'
-                    : 'glass-pill text-cream-light/75 hover:text-cream'
+                    ? 'bg-charcoal text-cream dark:bg-cream dark:text-charcoal font-medium shadow-md'
+                    : 'glass-pill text-charcoal/80 dark:text-cream-light/75 hover:text-charcoal dark:hover:text-cream'
                 }`}
               >
                 {cat}
@@ -88,17 +88,17 @@ export default function SelectedWorkSection() {
               <Link
                 key={item.id}
                 to={`/work/${item.id}`}
-                className={`group block relative overflow-hidden bg-[#141412] border border-white/5 transition-transform duration-500 ${item.gridSpan}`}
+                className={`group block relative overflow-hidden bg-cream-dark dark:bg-[#141412] border border-black/5 dark:border-white/5 transition-transform duration-500 ${item.gridSpan}`}
               >
                 <div className={`w-full overflow-hidden ${item.aspect}`}>
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover image-zoom-editorial filter brightness-[0.88] group-hover:brightness-100 transition-all duration-700"
+                    className="w-full h-full object-cover image-zoom-editorial filter brightness-[0.92] dark:brightness-[0.88] group-hover:brightness-100 transition-all duration-700"
                     loading="lazy"
                   />
                   {/* Subtle dark gradient overlay for caption legibility */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0C]/90 via-transparent to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
                   
                   {/* Caption & Metadata Overlay */}
                   <div className="absolute bottom-0 inset-x-0 p-5 sm:p-6 flex items-end justify-between text-cream-light pointer-events-none">
